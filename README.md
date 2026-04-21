@@ -63,5 +63,5 @@ For more information on using the Angular CLI, including detailed command refere
 2. There are places where the logic can be tricky to understand, especially in the edge case areas. While some complicated code in such a repo is unavoidable, but there is always room for improvement.
 3. Include linting and prettier configuration to make sure a strictly typed repo.
 4. Enhance the visuals, where the cards sometimes flicker, especially if it is the last frame and it has 3 rolls.
-5. Enhance user experience, by making it easier to do the whole process by keyboard navigation. Currently the input field is outfocued on submit.
-6. Explore responsiveness and how it should look like on different screen sizes.
+5. Enhance user experience, by making it easier to do the whole process by keyboard navigation. Currently the input field is outfocued on submit. ( MEANWHILE IMPROVED )
+6. Explore responsiveness and how it should look like on different screen sizes. ( MEANWHILE SLIGHTLY IMPROVED )
