@@ -42,3 +42,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+## Ignore GitHub Copilot instructions file
+.github/copilot-instructions.md
