@@ -9,7 +9,8 @@
 
     <mat-form-field appearance="outline" class="mt-4">
         <mat-label>Insert Roll</mat-label>
-        <input [formControl]="control" matInput type="number" min="0" [attr.max]="remainingPins()" />
+        <input [formControl]="control" (keyup.enter)="!control.invalid && roll()" matInput type="number" min="0"
+            [attr.max]="remainingPins()" />
         <mat-error>Value range 0-{{ remainingPins() }}</mat-error>
     </mat-form-field>
 
