@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { Frame } from './_models/frame';
 import { ResultBoard } from './result-board/result-board';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +18,8 @@ import { MAX_FRAMES, MAX_PINS } from './_constants/game-constants';
   styleUrl: './game.scss',
 })
 export class Game {
+  readonly rollInput = viewChild<ElementRef<HTMLInputElement>>('rollInput');
+
   readonly rollForm = inject(RollForm);
   private readonly snackbar = inject(MatSnackBar);
 
@@ -53,6 +55,7 @@ export class Game {
       this.remainingPins.set(isBonusRoll ? MAX_PINS : currentFrame.remainingPins());
     }
 
+    this.rollInput()?.nativeElement.focus();
     this.syncValidators();
   }
 
