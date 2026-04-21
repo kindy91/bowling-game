@@ -1,5 +1,5 @@
-<div class="flex gap-2">
+<div class="flex gap-2 overflow-x-auto">
     @for (frame of frames(); track $index) {
-    <app-frame-result [frame]="frame" [isActive]="activeFrameIndex() === $index"/>
-}
+    <app-frame-result [frame]="frame" [isActive]="activeFrameIndex() === $index" />
+    }
 </div>
