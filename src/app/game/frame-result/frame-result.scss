@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+:host {
+  @include mat.card-overrides((
+    outlined-container-shape: 0,
+  ));
+}
+
+.frame-card {
+  width: 150px;
+
+  .first-roll {
+    width: 42px;
+  }
+
+  &.active-frame {
+    @include mat.card-overrides((
+    outlined-outline-color: green,
+    outlined-container-color: blanchedalmond,
+  ));
+  }
+
+  
+  .roll-card {
+    @include mat.card-overrides((
+    outlined-outline-color: var(--mat-sys-outline-variant),
+  ));
+  }
+
+}
+
+.strike,
+.spare {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: black;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &.spare::before {
+    clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  }
+}

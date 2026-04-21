@@ -1,0 +1,27 @@
+<h2 class="mb-4">Bowling Game</h2>
+
+<app-result-board [frames]="frames" [activeFrameIndex]="currentFrameIndex()" />
+
+<div class="mt-4">
+    <h3>Current Frame: {{ currentFrameIndex() + 1 }}</h3>
+
+    @let control = rollForm.rollControl;
+
+    <mat-form-field appearance="outline" class="mt-4">
+        <mat-label>Insert Roll</mat-label>
+        <input [formControl]="control" matInput type="number" min="0" [attr.max]="remainingPins()" />
+        <mat-error>Value range 0-{{ remainingPins() }}</mat-error>
+    </mat-form-field>
+
+    <button matButton="filled" color="primary" class="ml-4" type="button"
+        [disabled]="control.invalid || isGameComplete()" (click)="roll()">Roll</button>
+</div>
+
+@if(isGameComplete()) {
+<div class="complete-section w-fll flex justify-center">
+    <h3 class="flex items-center gap-1">
+        <span>Game Complete</span>
+        <mat-icon fontIcon="check" />
+    </h3>
+</div>
+}

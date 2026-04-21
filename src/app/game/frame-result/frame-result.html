@@ -1,0 +1,40 @@
+<mat-card class="frame-card" [class.active-frame]="isActive()">
+    <mat-card-content>
+        @let frameValue = frame();
+
+        <div class="flex items-center justify-between gap-1">
+            <h3 class="first-roll">
+                @if(!frameValue.isStrike()) {
+                {{ frameValue.firstRoll() | handleEmpty }}
+                }
+            </h3>
+
+            <mat-card class="roll-card ml-auto" [class.strike]="frameValue.isStrike()"
+                [class.spare]="frameValue.isSpare()">
+                <mat-card-content>
+                    <h3>
+                        @if(!frameValue.isStrike() && !frameValue.isSpare()) {
+                        {{ frameValue.secondRoll() | handleEmpty}}
+                        } @else {
+                        _
+                        }
+                    </h3>
+                </mat-card-content>
+            </mat-card>
+
+            @if(frameValue.isLastFrame() && ( frameValue.isSpare() || frameValue.isStrike())) {
+            <mat-card class="roll-card ml-auto">
+                <mat-card-content>
+                    <h3>
+                        {{ frameValue.thridRoll() | handleEmpty }}
+                    </h3>
+                </mat-card-content>
+            </mat-card>
+            }
+        </div>
+
+        <div class="flex justify-center items-center mt-4">
+            <h3>{{ frameValue.score() | handleEmpty }}</h3>
+        </div>
+    </mat-card-content>
+</mat-card>

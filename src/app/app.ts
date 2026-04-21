@@ -1,17 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
   imports: [
     MatCard,
     MatCardContent,
-    MatCardHeader,
-    MatCardTitle
+    RouterOutlet
   ]
 })
-export class App {
-  protected readonly title = signal('bowling-game');
-}
+export class App {}

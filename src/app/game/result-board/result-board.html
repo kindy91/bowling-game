@@ -1,0 +1,5 @@
+<div class="flex gap-2">
+    @for (frame of frames(); track $index) {
+    <app-frame-result [frame]="frame" [isActive]="activeFrameIndex() === $index"/>
+}
+</div>
