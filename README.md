@@ -65,3 +65,4 @@ For more information on using the Angular CLI, including detailed command refere
 4. Enhance the visuals, where the cards sometimes flicker, especially if it is the last frame and it has 3 rolls.
 5. Enhance user experience, by making it easier to do the whole process by keyboard navigation. Currently the input field is outfocued on submit. ( MEANWHILE IMPROVED )
 6. Explore responsiveness and how it should look like on different screen sizes. ( MEANWHILE SLIGHTLY IMPROVED )
+7. Better enhance typography configuration, given the override that happens through tailwind, and pottentially material.
